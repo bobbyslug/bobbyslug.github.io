@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&family=Montserrat:wght@700;800&family=Poppins:wght@600;800&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root,
+.app {
+  height: 100%;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  @apply text-gray-500;
+}
+.app.dark {
+  height: 100%;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  @apply dark:bg-gray-800 dark:text-gray-20;
+}
+
+/* .title {
+  font-family: "Poppins", sans-serif;
+} */
+
+.display-none {
+  @apply hidden;
+}
