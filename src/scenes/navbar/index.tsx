@@ -81,18 +81,22 @@ const Navbar = ({ selectedPage, setSelectedPage, theme, setTheme }: Props) => {
                 </div>
               </div>
             ) : (
-              <button
-                className={`${
-                  theme === "dark" ? "bg-emerald-300" : "bg-violet-300"
-                } rounded-full p-2`}
-                onClick={() => setIsMenuToggled(!isMenuToggled)}
-              >
-                <Bars3Icon
+              <div className={`${flexBetween} gap-8`}>
+                <ThemeButton theme={theme} setTheme={setTheme} />
+
+                <button
                   className={`${
-                    theme === "dark" ? "text-gray-20" : "text-gray-500"
-                  } h-6 w-6 transition-colors duration-200 hover:text-gray-400`}
-                />
-              </button>
+                    theme === "dark" ? "bg-emerald-300" : "bg-violet-300"
+                  } rounded-full p-2`}
+                  onClick={() => setIsMenuToggled(!isMenuToggled)}
+                >
+                  <Bars3Icon
+                    className={`${
+                      theme === "dark" ? "text-gray-20" : "text-gray-500"
+                    } h-6 w-6 transition-colors duration-200 hover:text-gray-400`}
+                  />
+                </button>
+              </div>
             )}
           </div>
         </div>
