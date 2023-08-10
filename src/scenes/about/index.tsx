@@ -1,10 +1,5 @@
 import HText from "@/shared/HText";
 import { SelectedPage } from "@/shared/types";
-import {
-  HomeModernIcon,
-  UserGroupIcon,
-  AcademicCapIcon,
-} from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 
 type Props = {

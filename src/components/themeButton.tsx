@@ -1,5 +1,5 @@
 import { MoonIcon, SunIcon } from "@heroicons/react/24/solid";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const themeSwitch = () => {
   if (document.documentElement.classList.contains("dark")) {

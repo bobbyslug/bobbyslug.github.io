@@ -1,4 +1,4 @@
-import useMediaQuery from "@/hooks/useMediaQuery";
+//import useMediaQuery from "@/hooks/useMediaQuery";
 import { SelectedPage } from "@/shared/types";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 

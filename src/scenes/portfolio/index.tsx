@@ -1,5 +1,5 @@
 import HText from "@/shared/HText";
-import { SelectedPage, ProjectType } from "@/shared/types";
+import { SelectedPage } from "@/shared/types";
 import { motion } from "framer-motion";
 
 type Props = {
@@ -7,34 +7,34 @@ type Props = {
   theme: string;
 };
 
-const projects: Array<ProjectType> = [
-  {
-    image: "TBD",
-    title: "TBD",
-    description: "C4C... TBD",
-    link: "TBD",
-  },
-  {
-    image: "",
-    title: "TL;DR",
-    description:
-      "A Chrome extension which summarizes articles for you. Provides an interface for selecting summary length, font size, and light/dark themes.",
-    link: "",
-  },
-  {
-    image: "",
-    title: "NLP Image Generator",
-    description:
-      "A python script which generates images based on a given text input. Uses Neural Network and Naive Bayes models trained on the Brown Corpus to create word embeddings for mapping emotions to paintins. They are then used to generate a painting from user input by matching objects and sentiment.",
-    link: "",
-  },
-  {
-    image: "",
-    title: "Photography",
-    description: "A collection of my favorite shots :)",
-    link: "",
-  },
-];
+// const projects: Array<ProjectType> = [
+//   {
+//     image: "TBD",
+//     title: "TBD",
+//     description: "C4C... TBD",
+//     link: "TBD",
+//   },
+//   {
+//     image: "",
+//     title: "TL;DR",
+//     description:
+//       "A Chrome extension which summarizes articles for you. Provides an interface for selecting summary length, font size, and light/dark themes.",
+//     link: "",
+//   },
+//   {
+//     image: "",
+//     title: "NLP Image Generator",
+//     description:
+//       "A python script which generates images based on a given text input. Uses Neural Network and Naive Bayes models trained on the Brown Corpus to create word embeddings for mapping emotions to paintins. They are then used to generate a painting from user input by matching objects and sentiment.",
+//     link: "",
+//   },
+//   {
+//     image: "",
+//     title: "Photography",
+//     description: "A collection of my favorite shots :)",
+//     link: "",
+//   },
+// ];
 
 const Portfolio = ({ setSelectedPage, theme }: Props) => {
   return (

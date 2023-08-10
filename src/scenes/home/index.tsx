@@ -1,5 +1,5 @@
-import useMediaQuery from "@/hooks/useMediaQuery";
-import ActionButton from "@/shared/actionButton";
+// import useMediaQuery from "@/hooks/useMediaQuery";
+// import ActionButton from "@/shared/actionButton";
 import { SelectedPage } from "@/shared/types";
 import Profile from "@/assets/profile.png";
 import Profile2 from "@/assets/profile2.png";
@@ -18,7 +18,7 @@ import { useEffect } from "react";
 type Props = { setSelectedPage: (value: SelectedPage) => void; theme: string };
 
 const Home = ({ setSelectedPage, theme }: Props) => {
-  const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
+  //const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
 
   const profiles = [Profile, Profile2];
 

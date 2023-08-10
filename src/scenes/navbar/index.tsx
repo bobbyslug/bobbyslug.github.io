@@ -6,7 +6,7 @@ import { SelectedPage } from "@/shared/types";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import ThemeButton from "@/components/themeButton";
 import NavProgressBar from "./navProgressBar";
-import { clear } from "console";
+//import { clear } from "console";
 
 type Props = {
   selectedPage: SelectedPage;
@@ -16,13 +16,7 @@ type Props = {
   isTopPage: boolean;
 };
 
-const Navbar = ({
-  selectedPage,
-  setSelectedPage,
-  theme,
-  setTheme,
-  isTopPage,
-}: Props) => {
+const Navbar = ({ selectedPage, setSelectedPage, theme, setTheme }: Props) => {
   const flexBetween = "flex items-center justify-between";
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const [isMenuToggled, setIsMenuToggled] = useState(false);
