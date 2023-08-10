@@ -3,7 +3,6 @@ import ActionButton from "@/shared/actionButton";
 import { SelectedPage } from "@/shared/types";
 import Profile from "@/assets/profile.png";
 import Profile2 from "@/assets/profile2.png";
-import AnchorLink from "react-anchor-link-smooth-scroll";
 import CssIcon from "@/assets/css-icon.png";
 import HtmlIcon from "@/assets/html-icon.png";
 import ReactIcon from "@/assets/react-icon.png";
@@ -14,6 +13,7 @@ import ChakraIcon from "@/assets/chakra-icon.png";
 import LinkedinIcon from "@/assets/linkedin-icon.png";
 import GithubIcon from "@/assets/github-icon.png";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 type Props = { setSelectedPage: (value: SelectedPage) => void; theme: string };
 
@@ -22,20 +22,21 @@ const Home = ({ setSelectedPage, theme }: Props) => {
 
   const profiles = [Profile, Profile2];
 
-  const switchImage = () => {
+  useEffect(() => {
     const imageElement = document.getElementById(
       "profile-graphic",
     ) as HTMLImageElement;
     if (!imageElement) return;
-    imageElement.src = profiles[0];
-    let currentIndex = 0;
 
-    setInterval(() => {
+    let currentIndex = 0;
+    imageElement.src = profiles[0];
+
+    const interval = setInterval(() => {
       currentIndex = (currentIndex + 1) % profiles.length;
       imageElement.src = profiles[currentIndex];
     }, 1000);
-  };
-  switchImage();
+    return () => clearInterval(interval);
+  });
 
   return (
     <section
@@ -69,7 +70,10 @@ const Home = ({ setSelectedPage, theme }: Props) => {
               </div>
             </div>
             <p className="text-md mt-8">
-              Hi! I'm Chris, a front-end developer based in Boston, MA.
+              Hi! I'm Chris, a front-end developer based in Boston, MA. I love
+              bringing websites to life with UI effects, and creating intuitive,
+              dynamic user experiences. When not coding, I enjoy playing guitar,
+              taking photos, and spending time with my cat.
             </p>
           </motion.div>
           {/* ACTIONS */}
@@ -84,18 +88,20 @@ const Home = ({ setSelectedPage, theme }: Props) => {
               visible: { opacity: 1, x: 0 },
             }}
           >
-            <AnchorLink
+            <a
               className="hov:text-secondary-500 dark:hov:text-gray-600"
               href="https://www.linkedin.com/in/christopher-he-/"
+              target="_blank"
             >
               <img alt="linkedin-icon" src={LinkedinIcon} />
-            </AnchorLink>
-            <AnchorLink
+            </a>
+            <a
               className="hov:text-secondary-500 dark:hov:text-gray-600"
               href="https://www.github.com/bobbyslug"
+              target="_blank"
             >
               <img alt="github-icon" src={GithubIcon} />
-            </AnchorLink>
+            </a>
           </motion.div>
           {/* TECH STACK */}
           <motion.div

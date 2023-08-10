@@ -1,7 +1,13 @@
 export enum SelectedPage {
   Home = "home",
   About = "about",
-  Projects = "projects",
-  Interests = "interests",
+  Portfolio = "portfolio",
   Contact = "contact",
+}
+
+export interface ProjectType {
+  title: string;
+  description: string;
+  image: string;
+  link: string;
 }
