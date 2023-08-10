@@ -7,7 +7,7 @@ const HText = ({ children, theme }: Props) => {
   return (
     <h1
       className={`${
-        theme === "dark" ? "dark text-emerald-400" : "text-violet-500"
+        theme === "dark" ? "dark text-emerald-300" : "text-violet-500"
       } text-md basis-3/5 font-poppins font-bold`}
     >
       {children}

@@ -5,6 +5,7 @@ import Link from "./Link";
 import { SelectedPage } from "@/shared/types";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import ThemeButton from "@/components/themeButton";
+import NavProgressBar from "./navProgressBar";
 import { clear } from "console";
 
 type Props = {
@@ -26,7 +27,9 @@ const Navbar = ({
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const [isMenuToggled, setIsMenuToggled] = useState(false);
   const navbarBackground =
-    theme === "dark" ? "bg-gray-900 drop-shadow" : "bg-slate-200 drop-shadow";
+    theme === "dark" ? "bg-gray-900 drop-shadow" : "bg-green-100 drop-shadow";
+
+  const completion = NavProgressBar();
 
   useEffect(() => {
     const handleResize = () => {
@@ -47,7 +50,13 @@ const Navbar = ({
         <div className={`${flexBetween} mx-auto w-5/6`}>
           <div className={`${flexBetween} w-full gap-16`}>
             {/* LEFT SIDE */}
-            <button className={`${flexBetween} text-lg`}>Chris.dev</button>
+            <div className={`${flexBetween} text-lg`}>
+              <Link
+                page="Chris.dev"
+                selectedPage={selectedPage}
+                setSelectedPage={setSelectedPage}
+              />
+            </div>
             {/* RIGHT SIDE */}
             {isAboveMediumScreens ? (
               <div className={`${flexBetween} w-full`}>
@@ -63,12 +72,7 @@ const Navbar = ({
                     setSelectedPage={setSelectedPage}
                   />
                   <Link
-                    page="Projects"
-                    selectedPage={selectedPage}
-                    setSelectedPage={setSelectedPage}
-                  />
-                  <Link
-                    page="Interests"
+                    page="Portfolio"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
                   />
@@ -84,14 +88,26 @@ const Navbar = ({
               </div>
             ) : (
               <button
-                className="rounded-full bg-violet-400 p-2"
+                className={`${
+                  theme === "dark" ? "bg-emerald-300" : "bg-violet-300"
+                } rounded-full p-2`}
                 onClick={() => setIsMenuToggled(!isMenuToggled)}
               >
-                <Bars3Icon className="h-6 w-6 text-white" />
+                <Bars3Icon
+                  className={`${
+                    theme === "dark" ? "text-gray-20" : "text-gray-500"
+                  } h-6 w-6 transition-colors duration-200 hover:text-gray-400`}
+                />
               </button>
             )}
           </div>
         </div>
+        <span
+          style={{ transform: `translateX(${completion - 100}%)` }}
+          className={`${
+            theme === "dark" ? "bg-emerald-300" : "bg-violet-400"
+          } absolute bottom-0 h-1 w-full`}
+        />
       </div>
       {/* MOBILE MENU MODAL */}
       {!isAboveMediumScreens && (
@@ -116,12 +132,12 @@ const Navbar = ({
               setSelectedPage={setSelectedPage}
             />
             <Link
-              page="Projects"
+              page="About"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />
             <Link
-              page="Interests"
+              page="Portfolio"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />
