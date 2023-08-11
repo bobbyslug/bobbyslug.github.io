@@ -36,6 +36,8 @@ type Props = {
 //   },
 // ];
 
+// lighter green: #F0FDF4
+
 const Portfolio = ({ setSelectedPage, theme }: Props) => {
   return (
     <section

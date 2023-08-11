@@ -111,7 +111,7 @@ const Navbar = ({ selectedPage, setSelectedPage, theme, setTheme }: Props) => {
       {!isAboveMediumScreens && (
         <div
           className={`${
-            theme === "dark" ? "dark bg-gray-900" : "bg-slate-200"
+            theme === "dark" ? "dark bg-gray-900" : "bg-green-100"
           } ${
             isMenuToggled ? "translate-x-0" : "translate-x-full"
           } duration-800 fixed bottom-0 right-0 z-40 h-full w-[300px] transform  drop-shadow-xl transition-transform ease-in-out`}

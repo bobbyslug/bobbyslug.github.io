@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { SelectedPage } from "@/shared/types";
 import About from "@/scenes/about";
 import Portfolio from "@/scenes/portfolio";
+import Contact from "./scenes/contact";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
@@ -41,6 +42,7 @@ function App() {
       <Home setSelectedPage={setSelectedPage} theme={theme} />
       <About setSelectedPage={setSelectedPage} theme={theme}></About>
       <Portfolio setSelectedPage={setSelectedPage} theme={theme}></Portfolio>
+      <Contact setSelectedPage={setSelectedPage} theme={theme}></Contact>
     </div>
   );
 }
