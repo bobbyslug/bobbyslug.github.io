@@ -12,19 +12,92 @@ body,
   height: 100%;
   width: 100%;
   font-family: "Poppins", sans-serif;
-  @apply text-gray-500;
 }
+
 .app.dark {
   height: 100%;
   width: 100%;
   font-family: "Poppins", sans-serif;
-  @apply dark:bg-gray-800 dark:text-gray-20;
 }
 
-/* .title {
-  font-family: "Poppins", sans-serif;
+.text {
+  color: #0e0101;
+}
+
+.background {
+  background-color: #fad1d1;
+}
+
+.primary {
+  background-color: #46ecec;
+}
+
+.secondary {
+  background-color: #ff9e9e;
+}
+
+.accent {
+  color: #14bdbd;
+}
+
+.text.dark {
+  color: #f6e2fd;
+}
+
+.background.dark {
+  background-color: #17071d;
+}
+
+.primary.dark {
+  background-color: #b10eec;
+}
+
+.secondary.dark {
+  background-color: #280a33;
+}
+
+.accent.dark {
+  color: #db8cf8;
+}
+
+.color-effect {
+  background: linear-gradient(120deg, #46ecec, #14bdbd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-color-effect {
+  background: linear-gradient(120deg, #46ecec, #14bdbd);
+}
+
+.color-effect.dark {
+  background: linear-gradient(120deg, #b10eec, white);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-color-effect.dark {
+  background: linear-gradient(120deg, #17071d, #b10eec);
+}
+
+.selected {
+  color: #14bdbd;
+}
+
+.selected.dark {
+  color: #db8cf8;
+}
+
+/* .nav-text {
+  color: #0e0101;
 } */
 
-.display-none {
-  @apply hidden;
+.nav-text:hover {
+  color: #14bdbd;
+}
+
+.nav-text.dark:hover {
+  color: #db8cf8;
 }

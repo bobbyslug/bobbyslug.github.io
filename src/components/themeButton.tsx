@@ -29,16 +29,16 @@ const ThemeButton = ({ theme, setTheme }: Props) => {
       }}
     >
       <div
-        className={`transition-transform ${
+        className={`transition-transform duration-1000 ${
           localStorage.getItem("theme") === "dark"
             ? "rotate-180 transform "
             : "rotate-0 transform "
         }`}
       >
         {theme === "dark" ? (
-          <SunIcon className="mt-1 h-8 w-8 cursor-pointer rounded-md bg-gray-700 p-2 text-slate-50 transition dark:hover:bg-gray-600" />
+          <SunIcon className="nav-text dark mt-1 h-9 w-9 cursor-pointer rounded-md p-2 " />
         ) : (
-          <MoonIcon className="mt-1 h-8 w-8 cursor-pointer rounded-md bg-slate-50 p-2 text-gray-700 transition hover:bg-gray-200" />
+          <MoonIcon className="nav-text mt-1 h-9 w-9 cursor-pointer rounded-md  p-2 " />
         )}
       </div>
     </button>

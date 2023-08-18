@@ -31,7 +31,7 @@ function App() {
   }
 
   return (
-    <div className={`app ${theme === "dark" ? "dark" : ""} bg-green-50`}>
+    <div className={`app ${theme === "dark" ? "dark" : ""} background text`}>
       <Navbar
         selectedPage={selectedPage}
         setSelectedPage={setSelectedPage}

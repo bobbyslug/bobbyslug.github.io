@@ -20,8 +20,7 @@ const Navbar = ({ selectedPage, setSelectedPage, theme, setTheme }: Props) => {
   const flexBetween = "flex items-center justify-between";
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const [isMenuToggled, setIsMenuToggled] = useState(false);
-  const navbarBackground =
-    theme === "dark" ? "bg-gray-900 drop-shadow" : "bg-green-100 drop-shadow";
+  const dark = theme === "dark" ? "dark" : "";
 
   const completion = NavProgressBar();
 
@@ -37,19 +36,19 @@ const Navbar = ({ selectedPage, setSelectedPage, theme, setTheme }: Props) => {
   return (
     <nav>
       <div
-        className={`${navbarBackground} ${flexBetween} ${
-          theme === "dark" ? "dark" : ""
-        } fixed top-0 z-30 w-full py-6`}
+        className={`${dark} ${flexBetween} background fixed top-0 z-30 w-full py-6 drop-shadow-xl transition duration-500`}
       >
         <div className={`${flexBetween} mx-auto w-5/6`}>
           <div className={`${flexBetween} w-full gap-16`}>
             {/* LEFT SIDE */}
             <div className={`${flexBetween} text-lg`}>
-              <Link
-                page="Chris.dev"
-                selectedPage={selectedPage}
-                setSelectedPage={setSelectedPage}
-              />
+              <a
+                className={`${dark} nav-text`}
+                href="chrishe.dev"
+                target="_blank"
+              >
+                Chris.dev
+              </a>
             </div>
             {/* RIGHT SIDE */}
             {isAboveMediumScreens ? (
@@ -59,21 +58,25 @@ const Navbar = ({ selectedPage, setSelectedPage, theme, setTheme }: Props) => {
                     page="Home"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
+                    theme={theme}
                   />
                   <Link
                     page="About"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
+                    theme={theme}
                   />
                   <Link
                     page="Portfolio"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
+                    theme={theme}
                   />
                   <Link
                     page="Contact"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
+                    theme={theme}
                   />
                 </div>
                 <div>
@@ -85,15 +88,11 @@ const Navbar = ({ selectedPage, setSelectedPage, theme, setTheme }: Props) => {
                 <ThemeButton theme={theme} setTheme={setTheme} />
 
                 <button
-                  className={`${
-                    theme === "dark" ? "bg-emerald-300" : "bg-violet-300"
-                  } rounded-full p-2`}
+                  className={`${dark} rounded-full p-2 transition-colors duration-200`}
                   onClick={() => setIsMenuToggled(!isMenuToggled)}
                 >
                   <Bars3Icon
-                    className={`${
-                      theme === "dark" ? "text-gray-20" : "text-gray-500"
-                    } h-6 w-6 transition-colors duration-200 hover:text-gray-400`}
+                    className={`${dark} nav-text mt-1 h-7 w-7 transition duration-200`}
                   />
                 </button>
               </div>
@@ -102,19 +101,15 @@ const Navbar = ({ selectedPage, setSelectedPage, theme, setTheme }: Props) => {
         </div>
         <span
           style={{ transform: `translateX(${completion - 100}%)` }}
-          className={`${
-            theme === "dark" ? "bg-emerald-300" : "bg-violet-400"
-          } absolute bottom-0 h-1 w-full`}
+          className={`${dark} bg-color-effect absolute bottom-0 h-1 w-full`}
         />
       </div>
       {/* MOBILE MENU MODAL */}
       {!isAboveMediumScreens && (
         <div
-          className={`${
-            theme === "dark" ? "dark bg-gray-900" : "bg-green-100"
-          } ${
+          className={`${dark} ${
             isMenuToggled ? "translate-x-0" : "translate-x-full"
-          } duration-800 fixed bottom-0 right-0 z-40 h-full w-[300px] transform  drop-shadow-xl transition-transform ease-in-out`}
+          } background duration-800 fixed bottom-0 right-0 z-40 h-full w-[300px] transform  drop-shadow-xl transition-transform ease-in-out`}
         >
           {/* CLOSE BUTTON */}
           <div className="flex justify-end p-12">
@@ -128,21 +123,25 @@ const Navbar = ({ selectedPage, setSelectedPage, theme, setTheme }: Props) => {
               page="Home"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
+              theme={theme}
             />
             <Link
               page="About"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
+              theme={theme}
             />
             <Link
               page="Portfolio"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
+              theme={theme}
             />
             <Link
               page="Contact"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
+              theme={theme}
             />
           </div>
         </div>

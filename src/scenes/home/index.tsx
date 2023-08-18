@@ -12,8 +12,8 @@ import MuiIcon from "@/assets/mui-icon.png";
 import ChakraIcon from "@/assets/chakra-icon.png";
 import LinkedinIcon from "@/assets/linkedin-icon.png";
 import GithubIcon from "@/assets/github-icon.png";
-import { motion } from "framer-motion";
 import { useEffect } from "react";
+import MotionDiv from "@/shared/MotionDiv";
 
 type Props = { setSelectedPage: (value: SelectedPage) => void; theme: string };
 
@@ -43,30 +43,28 @@ const Home = ({ setSelectedPage, theme }: Props) => {
       id="home"
       className={`${
         theme === "dark" ? "dark" : ""
-      } gap-16 py-10 md:h-full md:pb-0`}
+      } background gap-16 py-10 transition duration-300 md:h-full md:pb-0`}
     >
       {/* IMAGE AND MAIN HEADER */}
-      <motion.div
+      <MotionDiv
         className="mx-auto w-5/6 items-center justify-center md:flex md:h-5/6"
-        onViewportEnter={() => setSelectedPage(SelectedPage.Home)}
+        setSelectedPage={setSelectedPage}
+        selectedPage={SelectedPage.Home}
       >
         {/* MAIN HEADER */}
         <div className="z-10 mt-32 md:basis-3/5">
           {/* HEADINGS */}
-          <motion.div
+          <MotionDiv
             className="md:-mt-20"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.5 }}
-            variants={{
-              hidden: { opacity: 0, x: -50 },
-              visible: { opacity: 1, x: 0 },
-            }}
+            setSelectedPage={setSelectedPage}
+            selectedPage={SelectedPage.Home}
+            delay={0.2}
           >
             <div className="relative">
               <div className="before:content-evolvetext before:absolute before:-top-20">
-                <div className="title text-5xl">Front-end React Developer.</div>
+                <h1 className="title text-5xl">
+                  Front-end React <br /> Developer.
+                </h1>
               </div>
             </div>
             <p className="text-md mt-8">
@@ -75,18 +73,13 @@ const Home = ({ setSelectedPage, theme }: Props) => {
               dynamic user experiences. When not coding, I enjoy playing guitar,
               taking photos, and spending time with my cat.
             </p>
-          </motion.div>
+          </MotionDiv>
           {/* ACTIONS */}
-          <motion.div
+          <MotionDiv
             className="-ml-1 -mt-1 flex h-20 w-20 items-center gap-1 md:justify-start"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ delay: 0.2, duration: 0.2 }}
-            variants={{
-              hidden: { opacity: 0, x: -50 },
-              visible: { opacity: 1, x: 0 },
-            }}
+            setSelectedPage={setSelectedPage}
+            selectedPage={SelectedPage.Home}
+            delay={0.4}
           >
             <a
               className="hov:text-secondary-500 dark:hov:text-gray-600"
@@ -102,38 +95,38 @@ const Home = ({ setSelectedPage, theme }: Props) => {
             >
               <img alt="github-icon" src={GithubIcon} />
             </a>
-          </motion.div>
+          </MotionDiv>
           {/* TECH STACK */}
-          <motion.div
+          <MotionDiv
             className="mx-auto ml-0 mt-16 w-5/6"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ delay: 0.4, duration: 0.2 }}
-            variants={{
-              hidden: { opacity: 0, x: -50 },
-              visible: { opacity: 1, x: 0 },
-            }}
+            setSelectedPage={setSelectedPage}
+            selectedPage={SelectedPage.Home}
+            delay={0.5}
           >
-            <div className="flex w-3/5 items-center justify-between gap-6">
-              <span className="h-8 w-60 text-xl">Tech Stack</span>
+            <div className="ml-6 flex w-3/5 items-center justify-between gap-6">
+              <span className="max-w-60 min-w-60 -ml-6 h-8 text-xl">
+                Tech Stack
+              </span>
+              <span className="-mt-1 flex h-8 w-10 justify-center text-2xl">
+                |
+              </span>
               <div className="flex w-1/2 items-center justify-between gap-3 drop-shadow-xl">
                 <img alt="html-icon" src={HtmlIcon} />
                 <img alt="css-icon" src={CssIcon} />
                 <img alt="typescript-icon" src={TypescriptIcon} />
-                <img alt="tailwind-icon" src={TailwindIcon} />
                 <img alt="react-icon" src={ReactIcon} />
+                <img alt="tailwind-icon" src={TailwindIcon} />
                 <img alt="mui-icon" src={MuiIcon} />
                 <img alt="chakra-icon" src={ChakraIcon} />
               </div>
             </div>
-          </motion.div>
+          </MotionDiv>
         </div>
         {/* IMAGE */}
         <div className="flex flex-shrink-0 basis-3/5 justify-center md:z-10 md:-mr-20 md:mt-0 md:justify-items-end">
           <img alt="switching profile" id="profile-graphic" src={Profile} />
         </div>
-      </motion.div>
+      </MotionDiv>
     </section>
   );
 };

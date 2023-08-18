@@ -1,4 +1,5 @@
 import HText from "@/shared/HText";
+import MotionDiv from "@/shared/MotionDiv";
 import { SelectedPage } from "@/shared/types";
 import { motion } from "framer-motion";
 
@@ -12,40 +13,26 @@ const About = ({ setSelectedPage, theme }: Props) => {
     <section
       id="about"
       className={`${
-        theme === "dark" ? "dark bg-gray-700" : "bg-green-100"
-      } min-h-fill mx-auto py-20`}
+        theme === "dark" ? "dark " : ""
+      } secondary min-h-fill mx-auto py-20 transition duration-500`}
     >
-      <motion.div
+      <MotionDiv
         className="mx-auto flex w-5/6 flex-col justify-center gap-8"
-        onViewportEnter={() => setSelectedPage(SelectedPage.About)}
+        setSelectedPage={setSelectedPage}
+        selectedPage={SelectedPage.About}
       >
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.5 }}
-          variants={{
-            hidden: { opacity: 0, x: -50 },
-            visible: { opacity: 1, x: 0 },
-          }}
+        <HText theme={theme}>ABOUT ME</HText>
+        <MotionDiv
+          className="-mt-7"
+          setSelectedPage={setSelectedPage}
+          selectedPage={SelectedPage.About}
+          delay={0.2}
         >
-          <HText theme={theme}>ABOUT ME</HText>
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            variants={{
-              hidden: { opacity: 0, x: -50 },
-              visible: { opacity: 1, x: 0 },
-            }}
-          >
-            some things about me are ...fave color is sage green (in case it
-            wasn't obvious) in portfolio- always on the lookout for where my
-            next adventure will be!
-          </motion.div>
-        </motion.div>
-      </motion.div>
+          some things about me are ...fave color is sage green (in case it
+          wasn't obvious) in portfolio- always on the lookout for where my next
+          adventure will be!
+        </MotionDiv>
+      </MotionDiv>
     </section>
   );
 };

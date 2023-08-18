@@ -1,4 +1,5 @@
 import HText from "@/shared/HText";
+import MotionDiv from "@/shared/MotionDiv";
 import { SelectedPage } from "@/shared/types";
 import { motion } from "framer-motion";
 
@@ -43,38 +44,24 @@ const Portfolio = ({ setSelectedPage, theme }: Props) => {
     <section
       id="portfolio"
       className={`${
-        theme === "dark" ? "dark bg-gray-800" : "bg-green-50"
-      } min-h-fill mx-auto py-20`}
+        theme === "dark" ? "dark" : ""
+      } background min-h-fill mx-auto py-20 transition duration-500`}
     >
-      <motion.div
+      <MotionDiv
         className="mx-auto flex w-5/6 flex-col justify-center gap-8"
-        onViewportEnter={() => setSelectedPage(SelectedPage.About)}
+        setSelectedPage={setSelectedPage}
+        selectedPage={SelectedPage.Portfolio}
       >
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.5 }}
-          variants={{
-            hidden: { opacity: 0, x: -50 },
-            visible: { opacity: 1, x: 0 },
-          }}
+        <HText theme={theme}>PORTFOLIO</HText>
+        <MotionDiv
+          className="-mt-7"
+          setSelectedPage={setSelectedPage}
+          selectedPage={SelectedPage.Portfolio}
+          delay={0.2}
         >
-          <HText theme={theme}>PORTFOLIO</HText>
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            variants={{
-              hidden: { opacity: 0, y: 50 },
-              visible: { opacity: 1, y: 0 },
-            }}
-          >
-            projects
-          </motion.div>
-        </motion.div>
-      </motion.div>
+          projects
+        </MotionDiv>
+      </MotionDiv>
     </section>
   );
 };
