@@ -18,9 +18,8 @@ import MotionDiv from "@/shared/MotionDiv";
 type Props = { setSelectedPage: (value: SelectedPage) => void; theme: string };
 
 const Home = ({ setSelectedPage, theme }: Props) => {
-  //const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
-
   const profiles = [Profile, Profile2];
+  const dark = theme === "dark" ? "dark" : "";
 
   useEffect(() => {
     const imageElement = document.getElementById(
@@ -41,42 +40,40 @@ const Home = ({ setSelectedPage, theme }: Props) => {
   return (
     <section
       id="home"
-      className={`${
-        theme === "dark" ? "dark" : ""
-      } background gap-16 py-10 transition duration-300 md:h-full md:pb-0`}
+      className={`${dark} content background gap-16 py-10 transition duration-300 md:h-full md:pb-0`}
     >
       {/* IMAGE AND MAIN HEADER */}
       <MotionDiv
-        className="mx-auto w-5/6 items-center justify-center md:flex md:h-5/6"
+        className="header-main relative mx-auto w-5/6 max-w-screen-2xl md:h-5/6"
         setSelectedPage={setSelectedPage}
         selectedPage={SelectedPage.Home}
       >
         {/* MAIN HEADER */}
-        <div className="z-10 mt-32 md:basis-3/5">
+        <div className="header-text z-10 max-w-screen-sm md:mt-32 md:basis-3/5">
           {/* HEADINGS */}
           <MotionDiv
-            className="md:-mt-20"
+            className="-mt-12 "
             setSelectedPage={setSelectedPage}
             selectedPage={SelectedPage.Home}
             delay={0.2}
           >
             <div className="relative">
-              <div className="before:content-evolvetext before:absolute before:-top-20">
+              <div className="before:content-evolvetext before:relative before:-top-20">
                 <h1 className="title text-5xl">
                   Front-end React <br /> Developer.
                 </h1>
               </div>
             </div>
-            <p className="text-md mt-8">
+            <p className="text-md mt-8 max-w-md">
               Hi! I'm Chris, a front-end developer based in Boston, MA. I love
               bringing websites to life with UI effects, and creating intuitive,
               dynamic user experiences. When not coding, I enjoy playing guitar,
               taking photos, and spending time with my cat.
             </p>
           </MotionDiv>
-          {/* ACTIONS */}
+          {/* SOCIALS */}
           <MotionDiv
-            className="-ml-1 -mt-1 flex h-20 w-20 items-center gap-1 md:justify-start"
+            className="socials -ml-1 -mt-1 h-20 w-20 gap-1"
             setSelectedPage={setSelectedPage}
             selectedPage={SelectedPage.Home}
             delay={0.4}
@@ -98,19 +95,16 @@ const Home = ({ setSelectedPage, theme }: Props) => {
           </MotionDiv>
           {/* TECH STACK */}
           <MotionDiv
-            className="mx-auto ml-0 mt-16 w-5/6"
+            className="mx-auto ml-0 mt-16 flex w-full"
             setSelectedPage={setSelectedPage}
             selectedPage={SelectedPage.Home}
             delay={0.5}
           >
-            <div className="ml-6 flex w-3/5 items-center justify-between gap-6">
-              <span className="max-w-60 min-w-60 -ml-6 h-8 text-xl">
+            <div className="skills flex w-full justify-between gap-6">
+              <p className={`${dark} border-swap flex h-8 text-xl`}>
                 Tech Stack
-              </span>
-              <span className="-mt-1 flex h-8 w-10 justify-center text-2xl">
-                |
-              </span>
-              <div className="flex w-1/2 items-center justify-between gap-3 drop-shadow-xl">
+              </p>
+              <div className="icons flex list-none gap-3 drop-shadow-xl">
                 <img alt="html-icon" src={HtmlIcon} />
                 <img alt="css-icon" src={CssIcon} />
                 <img alt="typescript-icon" src={TypescriptIcon} />
@@ -123,8 +117,13 @@ const Home = ({ setSelectedPage, theme }: Props) => {
           </MotionDiv>
         </div>
         {/* IMAGE */}
-        <div className="flex flex-shrink-0 basis-3/5 justify-center md:z-10 md:-mr-20 md:mt-0 md:justify-items-end">
-          <img alt="switching profile" id="profile-graphic" src={Profile} />
+        <div className="image max-h-sm flex max-w-sm flex-shrink-0 justify-center md:z-10 md:justify-items-end">
+          <img
+            alt="switching profile"
+            id="profile-graphic"
+            src={Profile}
+            className=""
+          />
         </div>
       </MotionDiv>
     </section>
