@@ -58,7 +58,7 @@ const Portfolio = ({ setSelectedPage, theme }: Props) => {
           selectedPage={SelectedPage.Portfolio}
           delay={0.2}
         >
-          projects
+          projects n fotos
         </MotionDiv>
       </MotionDiv>
     </section>

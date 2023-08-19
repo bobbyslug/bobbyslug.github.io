@@ -8,7 +8,7 @@ const HText = ({ children, theme }: Props) => {
     <h1
       className={`${
         theme === "dark" ? "dark" : ""
-      } text text-md basis-3/5 font-poppins font-bold`}
+      } accent text-md basis-3/5 font-poppins text-xl font-bold`}
     >
       {children}
     </h1>

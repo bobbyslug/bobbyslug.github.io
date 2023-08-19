@@ -27,9 +27,11 @@ const About = ({ setSelectedPage, theme }: Props) => {
           selectedPage={SelectedPage.About}
           delay={0.2}
         >
-          some things about me are ...fave color is sage green (in case it
-          wasn't obvious) in portfolio- always on the lookout for where my next
-          adventure will be!
+          As a student at Northeastern University, I'm usually working on a
+          project or two to discover what areas and applications of software
+          most align with my values. In my spare time, I love playing music and
+          taking photographs, and I've included some of my favorite shots in my
+          portfolio!
         </MotionDiv>
       </MotionDiv>
     </section>
