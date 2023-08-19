@@ -1,7 +1,6 @@
 import HText from "@/shared/HText";
 import MotionDiv from "@/shared/MotionDiv";
 import { SelectedPage } from "@/shared/types";
-import { motion } from "framer-motion";
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
