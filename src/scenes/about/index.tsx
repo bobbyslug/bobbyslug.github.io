@@ -63,7 +63,7 @@ const About = ({ setSelectedPage, theme }: Props) => {
             title="Code4Community"
             years="2023 August - Present"
           >
-            <p>I did these things</p>
+            <p>TBD</p>
           </Card>
           <span className={`${dark} left-arrow`} />
         </div>

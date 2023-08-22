@@ -245,7 +245,6 @@ body,
   position: relative;
   border-radius: 6px;
   width: 100%;
-  max-width: 40rem;
 }
 
 .timeline-text.dark {
