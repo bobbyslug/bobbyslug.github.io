@@ -44,7 +44,7 @@ const Portfolio = ({ setSelectedPage, theme }: Props) => {
       id="portfolio"
       className={`${
         theme === "dark" ? "dark" : ""
-      } background min-h-fill mx-auto py-20 transition duration-500`}
+      } background min-h-fill mx-auto py-36 transition duration-500`}
     >
       <MotionDiv
         className="mx-auto flex w-5/6 flex-col justify-center gap-8"

@@ -67,8 +67,7 @@ const Home = ({ setSelectedPage, theme }: Props) => {
             <p className="text-md mt-8 max-w-md">
               Hi! I'm Chris, a front-end developer based in Boston, MA. I love
               bringing websites to life with UI effects, and creating intuitive,
-              dynamic user experiences. When not coding, I enjoy playing guitar,
-              taking photos, and spending time with my cat.
+              dynamic user experiences.
             </p>
           </MotionDiv>
           {/* SOCIALS */}
