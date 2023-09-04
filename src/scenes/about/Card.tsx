@@ -1,6 +1,6 @@
 import HText from "@/shared/HText";
 import { motion, useAnimation } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
 type Props = {
@@ -13,10 +13,12 @@ type Props = {
 const Card = ({ theme, title, years, children }: Props) => {
   const controls = useAnimation();
   const [ref, inView] = useInView();
+  const [hasShown, setHasShown] = useState(false);
 
   useEffect(() => {
     if (inView) {
       controls.start("visible");
+      setHasShown(true);
     }
   }, [controls, inView]);
   const dark = theme === "dark" ? "dark" : "";
@@ -24,8 +26,7 @@ const Card = ({ theme, title, years, children }: Props) => {
     <motion.div
       className={`${dark} timeline-text`}
       ref={ref}
-      initial="hidden"
-      whileInView="visible"
+      initial={hasShown ? "visible" : "hidden"}
       animate={controls}
       transition={{ duration: 0.5 }}
       variants={{

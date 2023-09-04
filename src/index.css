@@ -319,7 +319,7 @@ body,
   border-top: 15px solid transparent;
   border-bottom: 15px solid transparent;
   border-left: 15px solid #fad1d1;
-  right: 35px;
+  right: 36px;
 }
 
 .left-arrow.dark {
@@ -335,7 +335,7 @@ body,
   border-top: 15px solid transparent;
   border-bottom: 15px solid transparent;
   border-right: 15px solid #fad1d1;
-  left: 35px;
+  left: 36px;
 }
 
 .right-arrow.dark {
@@ -345,7 +345,7 @@ body,
 .animation-container {
   position: absolute;
   overflow: hidden;
-  height: 90%;
+  height: 88%;
   width: 10px;
   top: 0;
   z-index: 0;
@@ -384,5 +384,6 @@ body,
 
   .animation-container {
     left: 0;
+    height: 89%;
   }
 }

@@ -101,7 +101,7 @@ const Navbar = ({ selectedPage, setSelectedPage, theme, setTheme }: Props) => {
         </div>
         <span
           style={{ transform: `translateX(${completion - 100}%)` }}
-          className={`${dark} bg-color-effect absolute bottom-0 h-1 w-full`}
+          className={`${dark} bg-color-effect absolute bottom-0 h-1 w-full transition`}
         />
       </div>
       {/* MOBILE MENU MODAL */}

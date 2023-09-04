@@ -18,10 +18,19 @@ type Props = {
 const About = ({ setSelectedPage, theme }: Props) => {
   const dark = theme === "dark" ? "dark" : "";
   const completion = NavProgressBar();
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+  // let scrollRate =
+  //   height > 1200 ? completion * 1.6 - 160 : completion * 1.8 - 170;
+  // scrollRate = height > 1000 ? scrollRate : completion * 1.9 - 165;
+  // scrollRate = height > 900 ? scrollRate : completion * 1.95 - 160;
+  // scrollRate = width > 1200 ? scrollRate : completion * 1;
+  //scrollRate = width > 900 ? scrollRate : completion * 1.95 - 160;
+
   return (
     <section
       id="about"
-      className={`${dark} secondary mx-auto py-36  transition duration-500`}
+      className={`${dark} secondary mx-auto py-36 transition duration-500`}
     >
       <MotionDiv
         className="mx-auto flex w-3/6 flex-col justify-center gap-8"
@@ -46,8 +55,8 @@ const About = ({ setSelectedPage, theme }: Props) => {
       >
         <div className={`${dark} animation-container -ml-1 mt-16`}>
           <span
-            style={{ transform: `translateY(${completion * 1.58 - 160}%)` }}
-            className={`${dark} accent2 left-4/9 absolute h-full w-2 transition`}
+            style={{ transform: `translateY(${completion * 1.6 - 160}%)` }}
+            className={`${dark} accent2 left-4/9 absolute h-full w-2 transition duration-300`}
           />
         </div>
         <div className={`${dark} timeline-container left`}>

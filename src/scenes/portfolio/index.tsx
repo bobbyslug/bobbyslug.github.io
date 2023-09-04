@@ -58,7 +58,8 @@ const Portfolio = ({ setSelectedPage, theme }: Props) => {
           selectedPage={SelectedPage.Portfolio}
           delay={0.2}
         >
-          projects n fotos
+          This website was built from scratch using React, Typescript, and
+          Tailwind, and deployed with Cloudflare.
         </MotionDiv>
       </MotionDiv>
     </section>
