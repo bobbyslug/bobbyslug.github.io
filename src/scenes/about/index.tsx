@@ -18,14 +18,6 @@ type Props = {
 const About = ({ setSelectedPage, theme }: Props) => {
   const dark = theme === "dark" ? "dark" : "";
   const completion = NavProgressBar();
-  const width = window.innerWidth;
-  const height = window.innerHeight;
-  // let scrollRate =
-  //   height > 1200 ? completion * 1.6 - 160 : completion * 1.8 - 170;
-  // scrollRate = height > 1000 ? scrollRate : completion * 1.9 - 165;
-  // scrollRate = height > 900 ? scrollRate : completion * 1.95 - 160;
-  // scrollRate = width > 1200 ? scrollRate : completion * 1;
-  //scrollRate = width > 900 ? scrollRate : completion * 1.95 - 160;
 
   return (
     <section
@@ -55,43 +47,49 @@ const About = ({ setSelectedPage, theme }: Props) => {
       >
         <div className={`${dark} animation-container -ml-1 mt-16`}>
           <span
-            style={{ transform: `translateY(${completion * 1.6 - 160}%)` }}
+            style={{ transform: `translateY(${completion * 1.6 - 150}%)` }}
             className={`${dark} accent2 left-4/9 absolute h-full w-2 transition duration-300`}
           />
         </div>
         <div className={`${dark} timeline-container left`}>
           <a
             className="hov:text-secondary-500 dark:hov:text-gray-600"
-            href="https://c4cneu.com/"
+            href="https://www.northeastern.edu/"
             target="_blank"
           >
-            <img src={theme === "dark" ? C4CIconDark : C4CIcon} />
+            <img src={NUIcon} />
           </a>
           <Card
             theme={theme}
-            title="Code4Community"
-            years="2023 August - Present"
+            title="Northeastern University"
+            years="2019 September - Present"
           >
-            <p>TBD</p>
+            <p>
+              B.S. Computer Science <br /> Concentration - Artificial
+              Intelligence
+            </p>
           </Card>
           <span className={`${dark} left-arrow`} />
         </div>
         <div className={`${dark} timeline-container right`}>
           <a
             className="hov:text-secondary-500 dark:hov:text-gray-600"
-            href="https://wellframe.com/"
+            href="https://www.pressedcafe.com/"
             target="_blank"
           >
-            <img src={WellframeIcon} />
+            <img src={PressedIcon} />
           </a>
-          <Card theme={theme} title="Wellframe" years="2022 July - December">
+          <Card
+            theme={theme}
+            title="Pressed Cafe"
+            years="2021 May - 2022 March"
+          >
             <p>
-              • Contributed to the development of Wellframe’s web-based
-              dashboard product, which facilitated Care Manager to Patient
-              management (Typescript, Node.js) <br />• Collaborated closely with
-              design team to bring mockups to life, iteratively adapting to
-              evolving care manager needs <br />• Refactored a Ruby on Rails
-              system to new Java services, improving performance and scalability
+              • Cordially greeted and assisted 300+ guests per day
+              <br />• Made smoothies and drinks as barista, took orders at cash
+              register, and ensured customer satisfaction during rush hour
+              <br />• Bussed tables, monitored store-wide inventory, and
+              maintained clean facilities in downtime
             </p>
           </Card>
           <span className={`${dark} right-arrow`} />
@@ -126,22 +124,19 @@ const About = ({ setSelectedPage, theme }: Props) => {
         <div className={`${dark} timeline-container right`}>
           <a
             className="hov:text-secondary-500 dark:hov:text-gray-600"
-            href="https://www.pressedcafe.com/"
+            href="https://wellframe.com/"
             target="_blank"
           >
-            <img src={PressedIcon} />
+            <img src={WellframeIcon} />
           </a>
-          <Card
-            theme={theme}
-            title="Pressed Cafe"
-            years="2021 May - 2022 March"
-          >
+          <Card theme={theme} title="Wellframe" years="2022 July - December">
             <p>
-              • Cordially greeted and assisted 300+ guests per day
-              <br />• Made smoothies and drinks as barista, took orders at cash
-              register, and ensured customer satisfaction during rush hour
-              <br />• Bussed tables, monitored store-wide inventory, and
-              maintained clean facilities in downtime
+              • Contributed to the development of Wellframe’s web-based
+              dashboard product, which facilitated Care Manager to Patient
+              management (Typescript, Node.js) <br />• Collaborated closely with
+              design team to bring mockups to life, iteratively adapting to
+              evolving care manager needs <br />• Refactored a Ruby on Rails
+              system to new Java services, improving performance and scalability
             </p>
           </Card>
           <span className={`${dark} right-arrow`} />
@@ -149,22 +144,51 @@ const About = ({ setSelectedPage, theme }: Props) => {
         <div className={`${dark} timeline-container left`}>
           <a
             className="hov:text-secondary-500 dark:hov:text-gray-600"
-            href="https://www.northeastern.edu/"
+            href="https://c4cneu.com/"
             target="_blank"
           >
-            <img src={NUIcon} />
+            <img src={theme === "dark" ? C4CIconDark : C4CIcon} />
           </a>
           <Card
             theme={theme}
-            title="Northeastern University"
-            years="2019 September - Present"
+            title="Code4Community"
+            years="2023 August - Present"
           >
             <p>
-              B.S. Computer Science <br /> Concentration - Artificial
-              Intelligence
+              • Implemented a web application for the city of Boston to manage
+              adopting green infrastructure sites
+              <br />
+              • Build frontend from scratch, using Google Maps’ API to render
+              the Boston area GI sites
+              <br />
+              • Add backend routes to the NestJS API ranging from creating
+              summary reports to sending periodic emails to users
+              <br />• Connect routes with the frontend through HTTP requests to
+              the REST API to allow for user interaction
             </p>
           </Card>
           <span className={`${dark} left-arrow`} />
+        </div>
+        <div className={`${dark} timeline-container right short`}>
+          <a
+            className="hov:text-secondary-500 dark:hov:text-gray-600"
+            href="https://www.developforgood.org/"
+            target="_blank"
+          >
+            <img
+              src={
+                "https://assets-global.website-files.com/62d7c8cb6f11a35f47072653/650a327aee4574b4afe11724_Develop%20for%20Good%20Logo-p-500.png"
+              }
+            />
+          </a>
+          <Card
+            theme={theme}
+            title="Develop for Good"
+            years="2023 October - Present"
+          >
+            <p>TBD</p>
+          </Card>
+          <span className={`${dark} right-arrow`} />
         </div>
       </div>
     </section>
