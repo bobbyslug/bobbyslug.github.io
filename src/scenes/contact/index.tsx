@@ -1,6 +1,9 @@
 import HText from "@/shared/HText";
 import { SelectedPage } from "@/shared/types";
 import MotionDiv from "@/shared/MotionDiv";
+import Card from "./Card";
+import EmailIcon from "@/assets/email-icon.png";
+import MapIcon from "@/assets/map-icon.png";
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
@@ -44,14 +47,24 @@ const Contact = ({ setSelectedPage, theme }: Props) => {
           selectedPage={SelectedPage.Contact}
         >
           <HText theme={theme}>CONTACT</HText>
-          <MotionDiv
-            className="-mt-7"
-            setSelectedPage={setSelectedPage}
-            selectedPage={SelectedPage.Contact}
-            delay={0.2}
-          >
-            Location (willing to relocate)
-          </MotionDiv>
+          <div className="justify-left flex gap-20">
+            <Card
+              theme={theme}
+              title="Location"
+              icon={MapIcon}
+              link="https://maps.app.goo.gl/HkQr6KQK1dYi7Yvp9"
+            >
+              Boston, MA (willing to relocate)
+            </Card>
+            <Card
+              theme={theme}
+              title="Email"
+              icon={EmailIcon}
+              link="mailto:he.chr@northeastern.edu"
+            >
+              he.chr@northeastern.edu
+            </Card>
+          </div>
         </MotionDiv>
       </section>
     </>
