@@ -52,18 +52,28 @@ const Home = ({ setSelectedPage, theme }: Props) => {
         <div className="header-text z-10 max-w-screen-sm md:mt-32 md:basis-3/5">
           {/* HEADINGS */}
           <MotionDiv
-            className="-mt-12 "
+            className="-mt-12 justify-center"
             setSelectedPage={setSelectedPage}
             selectedPage={SelectedPage.Home}
             delay={0.2}
           >
             <div className="relative">
-              <div className="before:content-evolvetext before:relative before:-top-20">
+              <h1 className={`${dark} title text-5xl layer`}>
+                Front-end React <br /> Developer.
+              </h1>
+            </div>
+            <MotionDiv
+              className="relative -mt-24"
+              setSelectedPage={setSelectedPage}
+              selectedPage={SelectedPage.Home}
+              slowed
+            >
+              <div className="relative">
                 <h1 className="title text-5xl">
                   Front-end React <br /> Developer.
                 </h1>
               </div>
-            </div>
+            </MotionDiv>
             <p className="text-md mt-8 max-w-md">
               Hi! I'm Chris, a front-end developer based in Boston, MA. I love
               bringing websites to life with UI effects, and creating intuitive,

@@ -1,14 +1,17 @@
 type Props = {
   children: React.ReactNode;
   theme: string;
+  layered?: boolean;
 };
 
-const HText = ({ children, theme }: Props) => {
+const HText = ({ children, theme, layered }: Props) => {
   return (
     <h1
       className={`${
         theme === "dark" ? "dark" : ""
-      } accent text-md basis-3/5 font-poppins text-xl font-bold`}
+      } ${
+        layered ? "layer" : ""
+      } accent text-md basis-3/5 font-poppins text-2xl font-bold`}
     >
       {children}
     </h1>

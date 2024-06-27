@@ -13,7 +13,7 @@ type Props = {
 //const sectionVariants = { hidden: { opacity: 0 }, visible: { opacity: 1 } };
 
 const Contact = ({ setSelectedPage, theme }: Props) => {
-  const fill = theme === "dark" ? "#17071d" : "#fad1d1";
+  const fill = theme === "dark" ? "#17071d" : "#fcd9d9";
 
   return (
     <>
@@ -46,7 +46,15 @@ const Contact = ({ setSelectedPage, theme }: Props) => {
           setSelectedPage={setSelectedPage}
           selectedPage={SelectedPage.Contact}
         >
-          <HText theme={theme}>CONTACT</HText>
+          <HText theme={theme} layered>CONTACT</HText>
+          <MotionDiv
+            className="relative -mt-16"
+            setSelectedPage={setSelectedPage}
+            selectedPage={SelectedPage.Contact}
+            slowed
+          >
+            <HText theme={theme}>CONTACT</HText>
+          </MotionDiv>
           <div className="justify-left flex gap-20">
             <Card
               theme={theme}

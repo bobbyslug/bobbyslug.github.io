@@ -2,8 +2,8 @@ import Navbar from "@/scenes/navbar";
 import Home from "@/scenes/home";
 import { useEffect, useState } from "react";
 import { SelectedPage } from "@/shared/types";
-import About from "@/scenes/about";
-import Portfolio from "@/scenes/portfolio";
+import About from "@/scenes/portfolio";
+import Portfolio from "@/scenes/about";
 import Contact from "./scenes/contact";
 
 function App() {

@@ -9,6 +9,7 @@ type Props = {
   children: React.ReactNode;
   className?: string;
   delay?: number;
+  slowed?: boolean;
 };
 
 const MotionDiv = ({
@@ -17,6 +18,7 @@ const MotionDiv = ({
   children,
   className,
   delay,
+  slowed
 }: Props) => {
   const controls = useAnimation();
   const [ref, inView] = useInView();
@@ -27,18 +29,20 @@ const MotionDiv = ({
     }
   }, [controls, inView]);
 
+  const duration = slowed ? 0.8 : 0.5;
+
   return (
     <motion.div
       className={className}
       onViewportEnter={() => setSelectedPage(selectedPage)}
       ref={ref}
       initial="hidden"
-      whileInView="visible"
+      whileInView="visible"// *this refreshes animation on entering viewport*
       animate={controls}
-      transition={delay ? { delay: delay, duration: 0.5 } : { duration: 0.5 }}
+      transition={delay ? { delay: delay, duration: duration } : { duration: duration }}
       variants={{
-        hidden: { opacity: 0, x: -50 },
-        visible: { opacity: 1, x: 0 },
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0 },
       }}
     >
       {children}
