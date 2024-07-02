@@ -1,6 +1,8 @@
 import HText from "@/shared/HText";
 import MotionDiv from "@/shared/MotionDiv";
 import { SelectedPage } from "@/shared/types";
+import AboutImgController from "./aboutImageController";
+import { useEffect } from "react";
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
@@ -38,19 +40,48 @@ type Props = {
 
 // lighter green: #F0FDF4
 
-const Portfolio = ({ setSelectedPage, theme }: Props) => {
+const About = ({ setSelectedPage, theme }: Props) => {
+  // useEffect(() => {
+  //   const bandController = new AboutImgController("band");
+  //   // const nepalController = new AboutImgController("nepal");
+  //   // const graysonController = new AboutImgController("grayson");
+
+  //   return () => {
+  //     // Clean up listeners if needed
+  //     // This would require AboutImgController to support removing listeners, e.g., by storing references to the handlers
+  //   };
+  // }, []);
+  useEffect(() => {
+    new AboutImgController("band");
+    new AboutImgController("nepal");
+    new AboutImgController("grayson");
+  }, []);
   return (
     <section
-      id="portfolio"
+      id="about"
       className={`${
         theme === "dark" ? "dark" : ""
       } background min-h-fill mx-auto py-36 transition duration-500`}
     >
-      <div className={'flex'}>
-        <div className={'about-img band'}></div>
-        <div className={'about-img nepal'}></div>
-        <div className={'about-img grayson'}></div>
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style={{ display: "none" }}>
+        <defs>
+          <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+            <feBlend in="SourceGraphic" in2="goo" />
+          </filter>
+        </defs>
+      </svg>
+      <div className="flex">
+        <div className="about-img band" id="band" style={{ filter: "url(#goo)" }}></div>
+        <div className="about-img nepal" id="nepal" style={{ filter: "url(#goo)" }}></div>
+        <div className="about-img grayson" id="grayson" style={{ filter: "url(#goo)" }}></div>
       </div>
+      {/* <div className={'flex'} id="about-img-container">
+        <div className={'about-img band'} id="band"></div>
+        <div className={'about-img nepal'} id="nepal"></div>
+        <div className={'about-img grayson'} id="grayson"></div>
+      </div> */}
       <MotionDiv
         className="mx-auto flex w-3/6 flex-col gap-8"
         setSelectedPage={setSelectedPage}
@@ -68,7 +99,7 @@ const Portfolio = ({ setSelectedPage, theme }: Props) => {
         <MotionDiv
           className="-mt-7"
           setSelectedPage={setSelectedPage}
-          selectedPage={SelectedPage.Portfolio}
+          selectedPage={SelectedPage.About}
           delay={0.2}
         >
           I'm usually working on projects that serve my specific and personal quality-of-life needs and curiosities.
@@ -81,4 +112,4 @@ const Portfolio = ({ setSelectedPage, theme }: Props) => {
   );
 };
 
-export default Portfolio;
+export default About;

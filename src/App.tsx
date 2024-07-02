@@ -39,10 +39,10 @@ function App() {
         setTheme={setTheme}
         isTopPage={isTopPage}
       />
-      <Home setSelectedPage={setSelectedPage} theme={theme} />
-      <About setSelectedPage={setSelectedPage} theme={theme}></About>
-      <Portfolio setSelectedPage={setSelectedPage} theme={theme}></Portfolio>
-      <Contact setSelectedPage={setSelectedPage} theme={theme}></Contact>
+      <Home setSelectedPage={setSelectedPage} theme={theme}/>
+      <About setSelectedPage={setSelectedPage} theme={theme}/>
+      <Portfolio setSelectedPage={setSelectedPage} theme={theme}/>
+      <Contact setSelectedPage={setSelectedPage} theme={theme}/>
     </div>
   );
 }

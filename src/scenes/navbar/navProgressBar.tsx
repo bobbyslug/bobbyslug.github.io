@@ -7,7 +7,7 @@ const NavProgressBar = () => {
     const updateScrollCompletion = () => {
       const currentProgress = window.scrollY;
       const scrollHeight = document.body.scrollHeight - window.innerHeight;
-      console.log(currentProgress, scrollHeight);
+      //console.log(currentProgress, scrollHeight);
       if (scrollHeight) {
         setCompletion(
           Number((currentProgress / scrollHeight).toFixed(2)) * 100,

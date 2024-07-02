@@ -7,6 +7,7 @@ import SEIcon from "@/assets/SU.PA.png";
 import PressedIcon from "@/assets/pressed-icon.png";
 import WellframeIcon from "@/assets/wellframe-icon.png";
 import NUIcon from "@/assets/nu-icon.png";
+import AmpionIcon from "@/assets/ampion.png"
 import Card from "./Card";
 import NavProgressBar from "../navbar/navProgressBar";
 
@@ -15,13 +16,13 @@ type Props = {
   theme: string;
 };
 
-const About = ({ setSelectedPage, theme }: Props) => {
+const Portfolio = ({ setSelectedPage, theme }: Props) => {
   const dark = theme === "dark" ? "dark" : "";
   const completion = NavProgressBar();
 
   return (
     <section
-      id="about"
+      id="portfolio"
       className={`${dark} secondary mx-auto py-36 justify-center transition duration-500`}
     >
       <MotionDiv
@@ -41,7 +42,7 @@ const About = ({ setSelectedPage, theme }: Props) => {
         <MotionDiv
           className="-mt-7"
           setSelectedPage={setSelectedPage}
-          selectedPage={SelectedPage.About}
+          selectedPage={SelectedPage.Portfolio}
           delay={0.2}
         >
 
@@ -54,8 +55,8 @@ const About = ({ setSelectedPage, theme }: Props) => {
       >
         <div className={`${dark} animation-container -ml-1 mt-16`}>
           <span
-            style={{ transform: `translateY(${completion * 1.4 - 130}%)` }}
-            className={`${dark} accent2 left-4/9 absolute h-full w-2 transition duration-300`}
+            style={{ transform: `translateY(${completion * 1.7 - 135 }%)` }}
+            className={`${dark} background left-4/9 absolute h-full w-2 transition duration-300`}
           />
         </div>
         <div className={`${dark} timeline-container left`}>
@@ -206,16 +207,14 @@ const About = ({ setSelectedPage, theme }: Props) => {
           </Card>
           <span className={`${dark} right-arrow`} />
         </div>
-        <div className={`${dark} timeline-container left short`}>
+        <div className={`${dark} timeline-container left`}>
           <a
             className="hov:text-secondary-500 dark:hov:text-gray-600"
             href="https://ampion.net/"
             target="_blank"
           >
             <img
-              src={
-                "https://assets-global.website-files.com/62d7c8cb6f11a35f47072653/650a327aee4574b4afe11724_Develop%20for%20Good%20Logo-p-500.png"
-              }
+              src={AmpionIcon}
             />
           </a>
           <Card
@@ -224,7 +223,15 @@ const About = ({ setSelectedPage, theme }: Props) => {
             years="2024 January - Present"
           >
             <p>
-            </p>
+            •  Modernized and enhanced the Coach mobile app's online registration system, with the goal of 
+            improving the overall experience for families and students while addressing accessibility challenges
+            <br />
+            •  Provided programming to 4,500+ students across 80+ communities, representing a 
+            66% growth over the 2023-2024 school year
+            <br />
+            •  Redesigned and restructured core UX functions involving scheduling via the calendar, 
+            data collection, and team communications using Firebase authentication and a fully customizable API 
+            for Salesforce back-end (React-Native, Cocoapods, UI-Kitten)</p>
           </Card>
           <span className={`${dark} left-arrow`} />
         </div>
@@ -233,4 +240,4 @@ const About = ({ setSelectedPage, theme }: Props) => {
   );
 };
 
-export default About;
+export default Portfolio;
