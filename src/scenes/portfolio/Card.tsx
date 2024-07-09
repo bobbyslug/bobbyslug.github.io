@@ -6,11 +6,12 @@ import { useInView } from "react-intersection-observer";
 type Props = {
   theme: string;
   title: string;
+  role: string;
   years: string;
   children: React.ReactNode;
 };
 
-const Card = ({ theme, title, years, children }: Props) => {
+const Card = ({ theme, title, role, years, children }: Props) => {
   const controls = useAnimation();
   const [ref, inView] = useInView();
   const [hasShown, setHasShown] = useState(false);
@@ -35,7 +36,8 @@ const Card = ({ theme, title, years, children }: Props) => {
       }}
     >
       <HText theme={theme}>{title}</HText>
-      <h1 className="py-2 font-montserrat text-sm font-bold">{years}</h1>
+      <span>{role}</span>
+      <h1 className="py-2 font-montserrat text-sm font-bold -mt-2">{years}</h1>
       <p className="text-md font-montserrat ">{children}</p>
     </motion.div>
   );

@@ -53,10 +53,11 @@ const Portfolio = ({ setSelectedPage, theme }: Props) => {
       <div
         className={`${dark} timeline mx-auto mt-20 flex w-5/6 flex-col gap-8`}
       >
-        <div className={`${dark} animation-container -ml-1 mt-16`}>
+        <div className={`${dark} h-5/6 animation-container -ml-1 mt-16`}>
           <span
-            style={{ transform: `translateY(${completion * 1.7 - 135 }%)` }}
-            className={`${dark} background left-4/9 absolute h-full w-2 transition duration-300`}
+            id='timeline-scroll'
+            style={{ transform: `translateY(${completion * 1.9 - 140 }%)` }}
+            className={`${dark} left-4/9 absolute h-full w-2 transition duration-300`}
           />
         </div>
         <div className={`${dark} timeline-container left`}>
@@ -70,39 +71,17 @@ const Portfolio = ({ setSelectedPage, theme }: Props) => {
           <Card
             theme={theme}
             title="Northeastern University"
-            years="2019 September - Present"
+            role=""
+            years="2019 September - 2023 December"
           >
             <p>
-              B.S. Computer Science <br /> Concentration - Artificial
-              Intelligence
+              B.S. Computer Science <br />
+              One of the 7% of accepted students overpaying for an undergraduate education
             </p>
           </Card>
           <span className={`${dark} left-arrow`} />
         </div>
         <div className={`${dark} timeline-container right`}>
-          <a
-            className="hov:text-secondary-500 dark:hov:text-gray-600"
-            href="https://www.pressedcafe.com/"
-            target="_blank"
-          >
-            <img src={PressedIcon} />
-          </a>
-          <Card
-            theme={theme}
-            title="Pressed Cafe"
-            years="2021 May - 2022 March"
-          >
-            <p>
-              • Cordially greeted and assisted 300+ guests per day
-              <br />• Made smoothies and drinks as barista, took orders at cash
-              register, and ensured customer satisfaction during rush hour
-              <br />• Bussed tables, monitored store-wide inventory, and
-              maintained clean facilities in downtime
-            </p>
-          </Card>
-          <span className={`${dark} right-arrow`} />
-        </div>
-        <div className={`${dark} timeline-container left`}>
           <a
             className="hov:text-secondary-500 dark:hov:text-gray-600"
             href="https://www.se.com/us/en/"
@@ -113,23 +92,16 @@ const Portfolio = ({ setSelectedPage, theme }: Props) => {
           <Card
             theme={theme}
             title="Schneider Electric"
-            years="2021 July - December"
+            role="Software Business Analytics Co-op"
+            years="2021 July - 2021 December"
           >
             <p>
-              • Created an application to compare yearly sales data using
-              analytical scripting tools such as data scraping, cleaning, and
-              transformation, easily comprehended by non-technical audiences
-              (Python/Pandas/Numpy/ Scipy/Jupyter Notebook)
-              <br />• Reported digestible customer success data using
-              visualization platforms like Salesforce, and Tableau
-              <br />• Developed and maintained SQL databases for 4000+ customer
-              accounts, including designing tables, writing stored procedures,
-              and optimizing query performance (NoSQL)
+              Data cleaning and database maintenance.
             </p>
           </Card>
-          <span className={`${dark} left-arrow`} />
+          <span className={`${dark} right-arrow`} />
         </div>
-        <div className={`${dark} timeline-container right`}>
+        <div className={`${dark} timeline-container left`}>
           <a
             className="hov:text-secondary-500 dark:hov:text-gray-600"
             href="https://wellframe.com/"
@@ -137,19 +109,14 @@ const Portfolio = ({ setSelectedPage, theme }: Props) => {
           >
             <img src={WellframeIcon} />
           </a>
-          <Card theme={theme} title="Wellframe" years="2022 July - December">
+          <Card theme={theme} title="Wellframe" role="Software Engineer Co-op" years="2022 July - 2022 December">
             <p>
-              • Contributed to the development of Wellframe’s web-based
-              dashboard product, which facilitated Care Manager to Patient
-              management (Typescript, Node.js) <br />• Collaborated closely with
-              design team to bring mockups to life, iteratively adapting to
-              evolving care manager needs <br />• Refactored a Ruby on Rails
-              system to new Java services, improving performance and scalability
+              Worked on Care Manager dashboard with the Staff Experience team.
             </p>
           </Card>
-          <span className={`${dark} right-arrow`} />
+          <span className={`${dark} left-arrow`} />
         </div>
-        <div className={`${dark} timeline-container left`}>
+        <div className={`${dark} timeline-container right`}>
           <a
             className="hov:text-secondary-500 dark:hov:text-gray-600"
             href="https://c4cneu.com/"
@@ -160,24 +127,16 @@ const Portfolio = ({ setSelectedPage, theme }: Props) => {
           <Card
             theme={theme}
             title="Code4Community"
+            role="Software Developer"
             years="2023 August - 2023 December"
           >
             <p>
-              • Implemented a web application for the city of Boston to manage
-              adopting green infrastructure sites
-              <br />
-              • Build frontend from scratch, using Google Maps’ API to render
-              the Boston area GI sites
-              <br />
-              • Add backend routes to the NestJS API ranging from creating
-              summary reports to sending periodic emails to users
-              <br />• Connect routes with the frontend through HTTP requests to
-              the REST API to allow for user interaction
+              Built Green Infrastructure web app for the City of Boston.
             </p>
           </Card>
-          <span className={`${dark} left-arrow`} />
+          <span className={`${dark} right-arrow`} />
         </div>
-        <div className={`${dark} timeline-container right short`}>
+        <div className={`${dark} timeline-container left short`}>
           <a
             className="hov:text-secondary-500 dark:hov:text-gray-600"
             href="https://www.developforgood.org/"
@@ -192,22 +151,16 @@ const Portfolio = ({ setSelectedPage, theme }: Props) => {
           <Card
             theme={theme}
             title="Develop for Good"
-            years="2023 October - Present"
+            role="Software Developer"
+            years="2023 October - 2024 February"
           >
             <p>
-            •  Modernized and enhanced the Coach mobile app's online registration system, with the goal of 
-            improving the overall experience for families and students while addressing accessibility challenges
-            <br />
-            •  Provided programming to 4,500+ students across 80+ communities, representing a 
-            66% growth over the 2023-2024 school year
-            <br />
-            •  Redesigned and restructured core UX functions involving scheduling via the calendar, 
-            data collection, and team communications using Firebase authentication and a fully customizable API 
-            for Salesforce back-end (React-Native, Cocoapods, UI-Kitten)</p>
+              Enhanced the America SCORES: Bay Area mobile coaching app.
+            </p>
           </Card>
-          <span className={`${dark} right-arrow`} />
+          <span className={`${dark} left-arrow`} />
         </div>
-        <div className={`${dark} timeline-container left`}>
+        <div className={`${dark} timeline-container right`}>
           <a
             className="hov:text-secondary-500 dark:hov:text-gray-600"
             href="https://ampion.net/"
@@ -220,20 +173,14 @@ const Portfolio = ({ setSelectedPage, theme }: Props) => {
           <Card
             theme={theme}
             title="Ampion"
-            years="2024 January - Present"
+            role="Salesforce Developer Intern"
+            years="2024 January - 2024 June"
           >
             <p>
-            •  Modernized and enhanced the Coach mobile app's online registration system, with the goal of 
-            improving the overall experience for families and students while addressing accessibility challenges
-            <br />
-            •  Provided programming to 4,500+ students across 80+ communities, representing a 
-            66% growth over the 2023-2024 school year
-            <br />
-            •  Redesigned and restructured core UX functions involving scheduling via the calendar, 
-            data collection, and team communications using Firebase authentication and a fully customizable API 
-            for Salesforce back-end (React-Native, Cocoapods, UI-Kitten)</p>
+              
+            </p>
           </Card>
-          <span className={`${dark} left-arrow`} />
+          <span className={`${dark} right-arrow`} />
         </div>
       </div>
     </section>
