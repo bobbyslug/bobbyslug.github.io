@@ -83,13 +83,13 @@ const About = ({ setSelectedPage, theme }: Props) => {
         <div className={'about-img grayson'} id="grayson"></div>
       </div> */}
       <MotionDiv
-        className="mx-auto flex w-3/6 flex-col gap-8"
+        className="mx-auto flex w-3/6 flex-col gap-8 mt-12"
         setSelectedPage={setSelectedPage}
         selectedPage={SelectedPage.About}
       >
         <HText theme={theme} layered>ABOUT</HText>      
         <MotionDiv
-          className="relative -mt-16"
+          className="relative layer"
           setSelectedPage={setSelectedPage}
           selectedPage={SelectedPage.About}
           slowed

@@ -32,7 +32,7 @@ const Portfolio = ({ setSelectedPage, theme }: Props) => {
       >
         <HText theme={theme} layered>PORTFOLIO</HText> 
         <MotionDiv
-          className="relative -mt-16"
+          className="relative layer"
           setSelectedPage={setSelectedPage}
           selectedPage={SelectedPage.Portfolio}
           slowed

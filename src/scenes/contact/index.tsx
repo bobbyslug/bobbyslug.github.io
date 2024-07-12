@@ -42,13 +42,13 @@ const Contact = ({ setSelectedPage, theme }: Props) => {
         } secondary min-h-fill mx-auto py-20 transition duration-500`}
       >
         <MotionDiv
-          className="mx-auto flex w-5/6 flex-col justify-center gap-8"
+          className="mx-auto flex w-5/6 flex-col justify-center gap-8 mt-12"
           setSelectedPage={setSelectedPage}
           selectedPage={SelectedPage.Contact}
         >
           <HText theme={theme} layered>CONTACT</HText>
           <MotionDiv
-            className="relative -mt-16"
+            className="relative layer"
             setSelectedPage={setSelectedPage}
             selectedPage={SelectedPage.Contact}
             slowed

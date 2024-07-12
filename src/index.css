@@ -78,6 +78,7 @@ body,
 
 .layer {
   color: #db8cf8;
+  margin-top: -68px;
 }
 
 .layer.dark {

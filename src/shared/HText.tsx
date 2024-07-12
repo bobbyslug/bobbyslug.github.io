@@ -11,7 +11,7 @@ const HText = ({ children, theme, layered }: Props) => {
         theme === "dark" ? "dark" : ""
       } ${
         layered ? "layer" : ""
-      } accent text-md basis-3/5 font-poppins text-2xl font-bold`}
+      } accent basis-3/5 font-poppins text-3xl font-bold`}
     >
       {children}
     </h1>
