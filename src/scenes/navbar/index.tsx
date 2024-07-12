@@ -61,13 +61,13 @@ const Navbar = ({ selectedPage, setSelectedPage, theme, setTheme }: Props) => {
                     theme={theme}
                   />
                   <Link
-                    page="About"
+                    page="Portfolio"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
                     theme={theme}
                   />
                   <Link
-                    page="Portfolio"
+                    page="About"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
                     theme={theme}

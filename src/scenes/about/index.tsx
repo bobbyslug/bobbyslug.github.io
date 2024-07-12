@@ -83,7 +83,7 @@ const About = ({ setSelectedPage, theme }: Props) => {
         <div className={'about-img grayson'} id="grayson"></div>
       </div> */}
       <MotionDiv
-        className="mx-auto flex w-3/6 flex-col gap-8 mt-12"
+        className="mx-auto flex w-3/6 flex-col gap-8 mt-24"
         setSelectedPage={setSelectedPage}
         selectedPage={SelectedPage.About}
       >
@@ -102,10 +102,11 @@ const About = ({ setSelectedPage, theme }: Props) => {
           selectedPage={SelectedPage.About}
           delay={0.2}
         >
-          I'm usually working on projects that serve my specific and personal quality-of-life needs and curiosities.
-          In my spare time I love playing music, taking photographs, and being a cat dad.
+          While there isn't much to see yet, my page is a constant work in progress so check back in soon, and contact me to say hi! I welcome any and all words of affirmation regarding the small UI delights that I may or may not have pulled all-nighters for.
+          In my spare time I play guitar, take photos, and rescue the mouse wand toy from my tiny friend, Grayson.
+          <br/>
           This website was built from scratch using React Typescript,
-          Tailwind, and Framer Motion, and deployed with Cloudflare.
+          Tailwind, and Framer Motion, and deployed with Cloudflare. 
         </MotionDiv>
       </MotionDiv>
     </section>

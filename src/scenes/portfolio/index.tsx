@@ -25,7 +25,7 @@ const Portfolio = ({ setSelectedPage, theme }: Props) => {
       className={`${dark} secondary mx-auto justify-center py-36 transition duration-500`}
     >
       <MotionDiv
-        className="mx-auto flex w-5/6 flex-col justify-center gap-8"
+        className="mx-auto flex w-5/6 flex-col justify-center gap-8 mt-12"
         setSelectedPage={setSelectedPage}
         selectedPage={SelectedPage.Portfolio}
       >
@@ -56,7 +56,7 @@ const Portfolio = ({ setSelectedPage, theme }: Props) => {
         <div className={`${dark} animation-container -ml-1 mt-16 h-5/6`}>
           <span
             id="timeline-scroll"
-            style={{ transform: `translateY(${completion * 1.9 - 140}%)` }}
+            style={{ transform: `translateY(${completion * 2.2 - 160}%)` }}
             className={`${dark} left-4/9 absolute h-full w-2 transition duration-300`}
           />
         </div>
@@ -71,12 +71,11 @@ const Portfolio = ({ setSelectedPage, theme }: Props) => {
           <Card
             theme={theme}
             title="Northeastern University"
-            role=""
+            role="B.S. Computer Science"
             years="2019 September - 2023 December"
           >
             <p>
-              B.S. Computer Science <br />
-              One of the 7% of accepted students overpaying for an undergraduate
+              Elite university with 6.6% of students accepted for the opportunity to overpay for an undergraduate
               education
             </p>
           </Card>
@@ -115,7 +114,7 @@ const Portfolio = ({ setSelectedPage, theme }: Props) => {
             years="2022 July - 2022 December"
           >
             <p>
-              Worked on Care Manager dashboard with the Staff Experience team.
+              Far and away my most meaningful work experience. I never got to meet most of the team in person, and I often wonder how they are doing. 
             </p>
           </Card>
           <span className={`${dark} left-arrow`} />
@@ -134,7 +133,7 @@ const Portfolio = ({ setSelectedPage, theme }: Props) => {
             role="Software Developer"
             years="2023 August - 2023 December"
           >
-            <p>Built Green Infrastructure web app for the City of Boston.</p>
+            <p>Built the Green Infrastructure web app for the City of Boston. I loved getting to work with new developers and flexing my comprehensive understanding of git pull.</p>
           </Card>
           <span className={`${dark} right-arrow`} />
         </div>

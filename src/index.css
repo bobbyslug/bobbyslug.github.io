@@ -417,51 +417,51 @@ body,
 
 @media screen and (max-width: 2000px) {
   .animation-container {
-    height: 84%;
+    height: 88%;
   }
 }
 
 @media screen and (max-width: 1850px) {
   .animation-container {
-    height: 84%;
+    height: 88%;
   }
 }
 
 @media screen and (max-width: 1830px) {
   .animation-container {
-    height: 83%;
+    height: 87%;
   }
 }
 
-@media screen and (max-width: 1250px) {
+/* @media screen and (max-width: 1250px) {
   .animation-container {
-    height: 83%;
+    height: 87%;
   }
-}
+} */
 
 @media screen and (max-width: 1150px) {
   .animation-container {
-    height: 82%;
+    height: 90%;
   }
 }
 
 
 @media screen and (max-width: 900px) {
   .animation-container {
-    height: 83%;
+    height: 87%;
   }
 }
 
 @media screen and (max-width: 730px) {
   .animation-container {
     left: 0;
-    height: 83%;
+    height: 87%;
   }
 }
 
 @media screen and (max-width: 570px) {
   .animation-container {
-    height: 82%;
+    height: 86%;
   }
 }
 
