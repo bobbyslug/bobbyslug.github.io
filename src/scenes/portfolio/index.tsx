@@ -4,10 +4,9 @@ import { SelectedPage } from "@/shared/types";
 import C4CIcon from "@/assets/c4c-icon.png";
 import C4CIconDark from "@/assets/c4c-icon-dark.png";
 import SEIcon from "@/assets/SU.PA.png";
-import PressedIcon from "@/assets/pressed-icon.png";
 import WellframeIcon from "@/assets/wellframe-icon.png";
 import NUIcon from "@/assets/nu-icon.png";
-import AmpionIcon from "@/assets/ampion.png"
+import AmpionIcon from "@/assets/ampion.png";
 import Card from "./Card";
 import NavProgressBar from "../navbar/navProgressBar";
 
@@ -23,14 +22,16 @@ const Portfolio = ({ setSelectedPage, theme }: Props) => {
   return (
     <section
       id="portfolio"
-      className={`${dark} secondary mx-auto py-36 justify-center transition duration-500`}
+      className={`${dark} secondary mx-auto justify-center py-36 transition duration-500`}
     >
       <MotionDiv
         className="mx-auto flex w-5/6 flex-col justify-center gap-8"
         setSelectedPage={setSelectedPage}
         selectedPage={SelectedPage.Portfolio}
       >
-        <HText theme={theme} layered>PORTFOLIO</HText> 
+        <HText theme={theme} layered>
+          PORTFOLIO
+        </HText>
         <MotionDiv
           className="relative -mt-16"
           setSelectedPage={setSelectedPage}
@@ -45,18 +46,17 @@ const Portfolio = ({ setSelectedPage, theme }: Props) => {
           selectedPage={SelectedPage.Portfolio}
           delay={0.2}
         >
-
-        <br/>
-        Check out my journey so far...
-        </MotionDiv> 
+          <br />
+          Check out my journey so far...
+        </MotionDiv>
       </MotionDiv>
       <div
         className={`${dark} timeline mx-auto mt-20 flex w-5/6 flex-col gap-8`}
       >
-        <div className={`${dark} h-5/6 animation-container -ml-1 mt-16`}>
+        <div className={`${dark} animation-container -ml-1 mt-16 h-5/6`}>
           <span
-            id='timeline-scroll'
-            style={{ transform: `translateY(${completion * 1.9 - 140 }%)` }}
+            id="timeline-scroll"
+            style={{ transform: `translateY(${completion * 1.9 - 140}%)` }}
             className={`${dark} left-4/9 absolute h-full w-2 transition duration-300`}
           />
         </div>
@@ -76,7 +76,8 @@ const Portfolio = ({ setSelectedPage, theme }: Props) => {
           >
             <p>
               B.S. Computer Science <br />
-              One of the 7% of accepted students overpaying for an undergraduate education
+              One of the 7% of accepted students overpaying for an undergraduate
+              education
             </p>
           </Card>
           <span className={`${dark} left-arrow`} />
@@ -95,9 +96,7 @@ const Portfolio = ({ setSelectedPage, theme }: Props) => {
             role="Software Business Analytics Co-op"
             years="2021 July - 2021 December"
           >
-            <p>
-              Data cleaning and database maintenance.
-            </p>
+            <p>Data cleaning and database maintenance.</p>
           </Card>
           <span className={`${dark} right-arrow`} />
         </div>
@@ -109,7 +108,12 @@ const Portfolio = ({ setSelectedPage, theme }: Props) => {
           >
             <img src={WellframeIcon} />
           </a>
-          <Card theme={theme} title="Wellframe" role="Software Engineer Co-op" years="2022 July - 2022 December">
+          <Card
+            theme={theme}
+            title="Wellframe"
+            role="Software Engineer Co-op"
+            years="2022 July - 2022 December"
+          >
             <p>
               Worked on Care Manager dashboard with the Staff Experience team.
             </p>
@@ -130,9 +134,7 @@ const Portfolio = ({ setSelectedPage, theme }: Props) => {
             role="Software Developer"
             years="2023 August - 2023 December"
           >
-            <p>
-              Built Green Infrastructure web app for the City of Boston.
-            </p>
+            <p>Built Green Infrastructure web app for the City of Boston.</p>
           </Card>
           <span className={`${dark} right-arrow`} />
         </div>
@@ -154,9 +156,7 @@ const Portfolio = ({ setSelectedPage, theme }: Props) => {
             role="Software Developer"
             years="2023 October - 2024 February"
           >
-            <p>
-              Enhanced the America SCORES: Bay Area mobile coaching app.
-            </p>
+            <p>Enhanced the America SCORES: Bay Area mobile coaching app.</p>
           </Card>
           <span className={`${dark} left-arrow`} />
         </div>
@@ -166,9 +166,7 @@ const Portfolio = ({ setSelectedPage, theme }: Props) => {
             href="https://ampion.net/"
             target="_blank"
           >
-            <img
-              src={AmpionIcon}
-            />
+            <img src={AmpionIcon} />
           </a>
           <Card
             theme={theme}
@@ -176,9 +174,7 @@ const Portfolio = ({ setSelectedPage, theme }: Props) => {
             role="Salesforce Developer Intern"
             years="2024 January - 2024 June"
           >
-            <p>
-              
-            </p>
+            <p></p>
           </Card>
           <span className={`${dark} right-arrow`} />
         </div>
